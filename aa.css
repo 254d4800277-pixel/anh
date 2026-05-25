@@ -1,11 +1,11 @@
-/* Giao diện tổng quan */
+
 body {
   background-color: #f4f6f9;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
 }
 
-/* Định dạng tiêu đề các mục (Section Title) */
+
 .section-title {
   border-left: 6px solid;
   padding-left: 15px;
@@ -13,12 +13,35 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* Khung ảnh cá nhân hóa hiển thị mượt mà */
-.profile-img {
-  height: 50px;
-  object-fit: cover;
-  width: 100%;
-  transition: transform 0.4s ease;
+    max-width: 300px;  
+    margin: 20px auto;  
+    border-radius: 12px;
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Kích thước hình ảnh */
+.certificate-image {
+    width: 100%; /* Hình ảnh luôn lấp đầy chiều rộng của container */
+    height: auto; /* Chiều cao tự động điều chỉnh theo tỷ lệ ảnh */
+    display: block; /* Tránh khoảng cách lạ dưới ảnh */
+}
+
+/* Lớp phủ văn bản */
+.text-overlay {
+    position: absolute; /* Định vị tuyệt đối trên ảnh */
+    bottom: 20px;       /* Cách đáy 20px (như trong ảnh) */
+    left: 20px;         /* Cách trái 20px */
+    right: 20px;        /* Cách phải 20px */
+    background-color: rgba(0, 0, 0, 0.7); /* Màu đen bán trong suốt */
+    color: white;       /* Chữ màu trắng */
+    padding: 15px;      /* Khoảng cách đệm bên trong */
+    border-radius: 8px;  /* Bo góc lớp phủ */
+    text-align: center; /* Căn giữa văn bản */
+    font-family: Arial, sans-serif; /* Font chữ cơ bản */
+}
+
+
 }
 
 .profile-img:hover {
