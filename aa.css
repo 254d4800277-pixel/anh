@@ -22,23 +22,23 @@ body {
 
 /* Kích thước hình ảnh */
 .certificate-image {
-    width: 100%; /* Hình ảnh luôn lấp đầy chiều rộng của container */
-    height: auto; /* Chiều cao tự động điều chỉnh theo tỷ lệ ảnh */
-    display: block; /* Tránh khoảng cách lạ dưới ảnh */
+    width: 100%; 
+    height: 50px; 
+    display: block; 
 }
 
-/* Lớp phủ văn bản */
+
 .text-overlay {
-    position: absolute; /* Định vị tuyệt đối trên ảnh */
-    bottom: 20px;       /* Cách đáy 20px (như trong ảnh) */
-    left: 20px;         /* Cách trái 20px */
-    right: 20px;        /* Cách phải 20px */
-    background-color: rgba(0, 0, 0, 0.7); /* Màu đen bán trong suốt */
-    color: white;       /* Chữ màu trắng */
-    padding: 15px;      /* Khoảng cách đệm bên trong */
-    border-radius: 8px;  /* Bo góc lớp phủ */
-    text-align: center; /* Căn giữa văn bản */
-    font-family: Arial, sans-serif; /* Font chữ cơ bản */
+    position: absolute; 
+    bottom: 20px;      
+    left: 20px;        
+    right: 20px;       
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: white;     
+    padding: 15px;      
+    border-radius: 8px;  
+    text-align: center; 
+    font-family: Arial, sans-serif;
 }
 
 
@@ -55,15 +55,14 @@ body {
   overflow: hidden;
 }
 
-/* Font hiển thị code cho trang debug */
+
 .font-code {
   font-family: "Courier New", Courier, monospace;
   font-size: 0.88rem;
   line-height: 1.5;
 }
 
-/* Hiệu ứng khi di chuột vào các hàng trong bảng */
-.custom-table tbody tr {
+
   transition: background-color 0.2s ease;
 }
 
@@ -71,7 +70,7 @@ body {
   background-color: rgba(25, 135, 84, 0.08) !important;
 }
 
-/* Tùy chỉnh thanh trượt Range */
+
 .form-range::-webkit-slider-thumb {
   background: #198754;
 }
