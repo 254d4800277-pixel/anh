@@ -93,11 +93,7 @@ function renderTable(list) {
     tableBody.appendChild(row);
   });
 }
-
-/**
- * Tính năng mở rộng: Tự động đếm số lượng kỹ năng > 7 điểm.
- */
-function checkExcellentSkills(list) {
+ checkExcellentSkills(list) {
   const alertContainer = document.getElementById("alertContainer");
   if (!alertContainer) return;
 
@@ -115,9 +111,6 @@ function checkExcellentSkills(list) {
   }
 }
 
-/**
- * Hàm xóa toàn bộ dữ liệu trong bảng và bộ nhớ
- */
 function clearAllData() {
   if (confirm("Bạn có chắc muốn xóa sạch toàn bộ danh sách kỹ năng không?")) {
     localStorage.removeItem("skills");
