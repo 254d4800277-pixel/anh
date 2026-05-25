@@ -15,7 +15,7 @@ body {
 
 /* Khung ảnh cá nhân hóa hiển thị mượt mà */
 .profile-img {
-  height: 320px;
+  height: 100px;
   object-fit: cover;
   width: 100%;
   transition: transform 0.4s ease;
