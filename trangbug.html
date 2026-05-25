@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang Debug - Giải Trình Mã Lỗi</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <div class="container mt-4">
+    <ul class="nav nav-tabs justify-content-center bg-white p-2 rounded shadow-sm">
+      <li class="nav-item">
+        <a class="nav-link text-primary fw-bold" href="trang chu.html">🏠 Trang Chủ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-success fw-bold" href="trangquanli.html">🛠 Quản Lý Kỹ Năng</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active text-danger fw-bold" href="trangbug.html">🐞 Trang Debug</a>
+      </li>
+    </ul>
+  </div>
+
+    <div class="container my-5">
+      <h2 class="section-title text-danger border-danger mb-4">
+        Trang Phân Tích Lỗi Sai (Debug)
+      </h2>
+      <div class="card shadow-sm p-4">
+        <p class="text-muted">
+          Nhập nguyên văn đoạn mã lỗi đề bài cho vào ô bên trái, sửa lại cho
+          đúng vào ô bên phải kèm chú thích giải thích lỗi sai.
+        </p>
+
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="p-3 bg-light border border-danger rounded-3">
+              <h6 class="fw-bold text-danger mb-2">
+                ❌ Đoạn mã lỗi gốc (Đề bài cho):
+              </h6>
+              <pre class="font-code text-dark m-0">
+function addCourse(newCourse, list) {
+  if (mssv % 2 !== 0) { 
+    list.push(newCourse);
+  } else {
+    list.unshift(newCourse);
+  }
+  renderTable(list);
+}</pre
+              >
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="p-3 bg-light border border-success rounded-3">
+              <h6 class="fw-bold text-success mb-2">
+                ✔ Đoạn mã chuẩn (Đã chỉnh sửa):
+              </h6>
+              <pre class="font-code text-dark m-0">
+function addCourse(newCourse, list, mssvValue) {
+  const lastDigit = parseInt(mssvValue.slice(-1));
+  
+  if (lastDigit % 2 !== 0) { 
+    list.unshift(newCourse); // Lẻ -> Chèn ĐẦU bảng
+  } else {
+    list.push(newCourse);    // Chẵn -> Chèn CUỐI bảng
+  }
+  renderTable(list);
+}</pre
+              >
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="alert alert-warning border-0 shadow-sm mt-2">
+              <h6 class="fw-bold text-dark mb-2">
+                🔍 Giải thích chi tiết các lỗi sai được phát hiện:
+              </h6>
+              <ul class="mb-0 text-muted ps-3">
+                <li>
+                  <strong>Lỗi tầm vực (Scope Error):</strong> Hàm gốc sử dụng
+                  trực tiếp biến <code>mssv</code> nhưng biến này chưa hề được
+                  định nghĩa hay truyền từ tham số của hàm, làm chương trình báo
+                  lỗi crash hệ thống.
+                </li>
+                <li>
+                  <strong>Lỗi ngược logic đề bài:</strong> Đề bài yêu cầu số lẻ
+                  chèn lên đầu bảng (`unshift`), số chẵn chèn xuống cuối bảng
+                  (`push`). Đoạn mã gốc lại đi dùng <code>push</code> khi điều
+                  kiện là số lẻ <code>% 2 !== 0</code> $\rightarrow$ Hoàn toàn
+                  làm ngược so với đề bài.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+/* Giao diện tổng quan */
+body {
+  background-color: #f4f6f9;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Định dạng tiêu đề các mục (Section Title) */
+.section-title {
+  border-left: 6px solid;
+  padding-left: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Khung ảnh cá nhân hóa hiển thị mượt mà */
+.profile-img {
+  height: 320px;
+  object-fit: cover;
+  width: 100%;
+  transition: transform 0.4s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.02);
+}
+
+/* Định dạng các thẻ Card */
+.card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Font hiển thị code cho trang debug */
+.font-code {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+/* Hiệu ứng khi di chuột vào các hàng trong bảng */
+.custom-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.custom-table tbody tr:hover {
+  background-color: rgba(25, 135, 84, 0.08) !important;
+}
+
+/* Tùy chỉnh thanh trượt Range */
+.form-range::-webkit-slider-thumb {
+  background: #198754;
+}
+.form-range::-moz-range-thumb {
+  background: #198754;
+}
+.hero-banner {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://congnghethongtinaau.com/cong-nghe-thong-tin-gom-nhung-nganh-nao");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
