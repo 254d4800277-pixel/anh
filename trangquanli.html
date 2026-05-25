@@ -80,21 +80,20 @@
                 />
               </div>
               <div class="mb-3">
-                <label class="form-label fw-semibold"
-                  >Mức độ (1-10):
-                  <span id="levelValue" class="text-success fw-bold"
-                    >5</span
-                  ></label
-                >
-                <input
-                  type="range"
-                  id="skillLevel"
-                  class="form-range"
-                  min="1"
-                  max="10"
-                  value="5"
-                />
-              </div>
+  <label class="form-label fw-semibold">
+    Mức độ (1-10): <span id="levelValue" class="text-success fw-bold">5</span>
+  </label>
+  
+  <input 
+    type="range" 
+    id="skillLevel" 
+    class="form-range" 
+    min="1" 
+    max="10" 
+    value="5"
+    oninput="document.getElementById('levelValue').innerText = this.value"
+  />
+</div>
               <div class="mb-3">
                 <label class="form-label fw-semibold">Ghi chú</label>
                 <textarea
