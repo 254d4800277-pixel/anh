@@ -1,4 +1,4 @@
-// Khởi tạo mảng lưu trữ danh sách kỹ năng từ localStorage hoặc mảng rỗng
+
 let skillList = JSON.parse(localStorage.getItem("skills")) || [];
 
 // Khi trang web tải xong, kiểm tra nếu đang ở trang quản lý thì render dữ liệu cũ
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     checkExcellentSkills(skillList);
   }
 
-  // Đồng bộ hiển thị con số tức thì khi kéo thanh trượt mức độ (Range Input)
+  
   const skillRange = document.getElementById("skillLevel");
   const levelValueLabel = document.getElementById("levelValue");
   if (skillRange && levelValueLabel) {
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Xử lý sự kiện submit form (Thêm kỹ năng)
+  
   const skillForm = document.getElementById("skillForm");
   if (skillForm) {
     skillForm.addEventListener("submit", function (e) {
@@ -33,10 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const newCourse = { techName, releaseYear, skillLevel, note };
 
-      // Thực hiện thêm khóa học theo logic số cuối MSSV
+      
       addCourse(newCourse, skillList, mssvValue);
 
-      // Lưu trữ mảng vào localStorage để chia sẻ dữ liệu liên tục
+     
       localStorage.setItem("skills", JSON.stringify(skillList));
 
       // Kiểm tra tính năng bổ sung và reset form
@@ -47,9 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-/**
- * Logic định danh: Số cuối MSSV Lẻ chèn Đầu, Chẵn chèn Cuối
- */
+
 function addCourse(newCourse, list, mssvValue) {
   const lastDigit = parseInt(mssvValue.slice(-1));
 
@@ -67,9 +65,7 @@ function addCourse(newCourse, list, mssvValue) {
   renderTable(list);
 }
 
-/**
- * Hàm xuất dữ liệu từ mảng ra bảng HTML
- */
+
 function renderTable(list) {
   const tableBody = document.getElementById("skillTableBody");
   if (!tableBody) return;
